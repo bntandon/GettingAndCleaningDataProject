@@ -1,0 +1,27 @@
+# ReadMe for tidydataset.txt
+-------------------------------
+
+This ReadMe is for Getting and Cleaing Data course project2
+
+*How to run the program?*
+
+***
+
+To run the program, execute this in R
+
+1. source("runproject2.R")
+2. run_analysis()
+
+You may need to need to load libraries as needed including library(plyr)
+
+
+*About related files *
+
+***
+
+* A zip file is donwloaded from this site https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip 
+
+* and saved as ./data/dataset.zip in current directory
+
+* After processing the output file is created in the current workign directory as **tidydataset.txt**
+ 

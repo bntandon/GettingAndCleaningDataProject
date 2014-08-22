@@ -1,0 +1,59 @@
+# Codebook for tindydataset.txt
+
+***
+
+This code book is created with R markdown tags.
+
+**Files included**
+
+***
+
+* run_analysis.R	- R program to recreate tidy data set
+* CodeBook.Rmd		- R makrdown Codebook for this data set
+* ReadMe.Rmd		- A readme that provides details as how to run this program
+
+**Data source**
+
+***
+Data is originally related to 'Tracking The Wearable Computing Revolution'. For reference see [UCI Machine Learning](http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones)
+
+The data downloaded from the [project site](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip)
+
+**Variables used**
+
+***
+
+* Original data set used 561 meand/ standard deviations and other aggregate variables for 30 subjects and 6 activities. We select only 'mean()' or 'std()' variables (66 such variables) and generate a 'mean of each of these for every **subject** and **activity**.
+
+* File is space delimited and contains column heading in the first row.
+* Columns names are used as lower case for subjectnumebr, activitydescription and activitycode. Camelcase is used for the measure columns.
+
+**About the data transformation**
+
+***
+
+This program does the following transforms and cleanup
+
+1. Merges the training and test sets to create one data set.
+2. Extracts only the measurements on the mean -> mean() and standard deviations -> std().
+3. Descriptive Names for the **6 activities** are stored in additional column in tidy data  frame tidydatatset  
+WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING
+4. Rows are sorted by 'subjectnumber' and 'activitydescription'. Activity code is included for reference.
+5. Data set consists of **69 columns**, first three are
+
+* **subjectnumber**		- # associated with subject. Note both test and train subjects 
+* **activitydescription**	- LAYING, SITTING, STANDING, WALKING, WALKING_DOWNSTAIRS, WALKING_UPSATIRS
+* **activitycode**		- Activity code (1 to 6)
+
+Rest 66 columns are as below
+* Average of 33 means like TimeBodyAccelerationMeanX, TimeBodyAccelerationMeanY, FFTBodyAccelerationMeanY
+
+* average of 33 standard deviations like TimeBodyAccelerationSTDX,  TimeBodyAccelerationSTDY, TimeBodyAccelerationSTDZ, TimeGravityAccelerationSTDX etc.
+
+Data is in **wide** format
+
+** How to run this transformation?
+
+***
+
+Refer to the **ReadMe.Rmd** to run this transformation.
